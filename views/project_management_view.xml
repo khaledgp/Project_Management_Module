@@ -1,0 +1,145 @@
+<odoo>
+
+    <record id="project_mangement_view_tree" model="ir.ui.view">
+       <field name="name">project management tree</field>
+       <field name="model">project.management</field>
+       <field name="arch" type="xml">
+          <tree string="All Projects">
+            <field name="name" string="Project Name"/>
+            <field name="description" string="Description"/>
+            <field name="start_date" string="Start Date"/>
+            <field name="end_date" string="End Date"/>
+            <field name="assigned_team" string="Assigned Team"/>
+            <field name="status" string="Status"/>
+          </tree>
+       </field>
+    </record>
+
+
+    <record id="project_management_view_form" model="ir.ui.view">
+        <field name="name">project management form</field>
+        <field name="model">project.management</field>
+        <field name="arch" type="xml">
+            <form string="Project Management">
+                   <header>
+                        <field name="status" widget="statusbar" statusbar_visible="planning, in_progress, completed, on_hold" options="{'clickable': 1}"/>
+                    </header>
+                <sheet>
+
+                    <group>
+                        <field name="name" string="Project Name"/>
+                        <field name="description" string="Description"/>
+                        <field name="start_date" string="Start Date"/>
+                        <field name="end_date" string="End Date"/>
+                        <field name="assigned_team" string="Assigned Team"/>
+                    </group>
+
+                </sheet>
+<!--                <div class="oe_chatter">-->
+<!--                    <field name="message_follower_ids"/>-->
+<!--                    <field name="activity_ids"/>-->
+<!--                    <field name="message_ids"/>-->
+
+<!--                </div>-->
+            </form>
+        </field>
+    </record>
+
+
+    <record id="project_management_view_search" model="ir.ui.view">
+        <field name="name">project management search</field>
+        <field name="model">project.management</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Project Name"/>
+                <field name="assigned_team" string="Assigned Team"/>
+
+
+                <filter name="status_new" string="Planning" domain="[('status', '=', 'planning')]"/>
+                <filter name="status_in_progress" string="In Progress" domain="[('status', '=', 'in_progress')]"/>
+                <filter name="status_completed" string="Completed" domain="[('status', '=', 'completed')]"/>
+                <filter name="status_on_hold" string="On Hold" domain="[('status', '=', 'on_hold')]"/>
+
+
+                <filter name="group_assign" string="Assign Team" context="{'group_by': 'assigned_team'}"/>
+
+            </search>
+
+        </field>
+    </record>
+
+
+
+    <record id="project_management_action" model="ir.actions.act_window">
+        <field name="name">Project Management</field>
+        <field name="res_model">project.management</field>
+    </record>
+
+    <menuitem
+    id="all_projects_menu_item"
+    name="All Project"
+    parent="project_management_menu"
+    action="project_management_action"
+    />
+
+
+
+    <!-- Form view for Task Management -->
+    <record id="task_management_view_form" model="ir.ui.view">
+        <field name="name">task management form</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <form string="Task Management">
+                <header>
+                    <field name="status" widget="statusbar" statusbar_visible="to_do, in_progress, done" options="{'clickable': 1}"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name" string="Task Name" required="1"/>
+                        <field name="description" string="Description"/>
+                        <field name="assigned_to" string="Assigned To" required="1"/>
+                        <field name="project_id" string="Project" required="1"/>
+                        <field name="progress" string="Progress" widget="percentbar"/>
+                        <field name="due_date" string="Due Date" required="1"/>
+                        <field name="date_start" string="Start Date" required="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="task_management_view_tree" model="ir.ui.view">
+        <field name="name">task management tree</field>
+        <field name="model">project.task</field>
+        <field name="arch" type="xml">
+            <tree string="All Tasks">
+                <field name="name" string="Task Name"/>
+                <field name="description" string="Description"/>
+                <field name="assigned_to" string="Assigned To"/>
+                <field name="project_id" string="Project"/>
+                <field name="status" string="Status"/>
+                <field name="progress" string="Progress" widget="percentbar" options="{'color': 'green'}"/>
+                <field name="due_date" string="Due Date" />
+                <field name="date_start" string="Start Date" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="task_management_action" model="ir.actions.act_window">
+        <field name="name">Project Tasks</field>
+        <field name="res_model">project.task</field>
+    </record>
+
+    <menuitem
+    id="all_tasks_menu_item"
+    name="All Tasks"
+    parent="task_management_menu"
+    action="task_management_action"
+    />
+
+
+
+
+
+
+</odoo>

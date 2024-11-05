@@ -1,0 +1,325 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-05 13:51+0000\n"
+"PO-Revision-Date: 2024-11-05 13:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "<strong>Description:</strong>"
+msgstr "الوصف"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "<strong>End Date:</strong>"
+msgstr "تاريخ الإنتهاء"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "<strong>Project Name:</strong>"
+msgstr "إسم المشروع"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "<strong>Start Date:</strong>"
+msgstr "تاريخ البدأ"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "<strong>Status:</strong>"
+msgstr "الحالة"
+
+#. module: project_management
+#: model:ir.ui.menu,name:project_management.all_projects_menu_item
+msgid "All Project"
+msgstr "المشروع بالكامل"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_mangement_view_tree
+msgid "All Projects"
+msgstr "كل المشاريع"
+
+#. module: project_management
+#: model:ir.ui.menu,name:project_management.all_tasks_menu_item
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "All Tasks"
+msgstr "كل المهمات"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_search
+msgid "Assign Team"
+msgstr "تعيين الفريق"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__assigned_team
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_search
+#: model_terms:ir.ui.view,arch_db:project_management.project_mangement_view_tree
+msgid "Assigned Team"
+msgstr "الفريق الموكل"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_task__assigned_to
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "Assigned To"
+msgstr "موكل ل"
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_management__status__completed
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_search
+msgid "Completed"
+msgstr "مكتمل"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__completed_tasks
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "Completed Tasks"
+msgstr "مهمات مكتملة"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__create_uid
+#: model:ir.model.fields,field_description:project_management.field_project_task__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__create_date
+#: model:ir.model.fields,field_description:project_management.field_project_task__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__description
+#: model:ir.model.fields,field_description:project_management.field_project_task__description
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.project_mangement_view_tree
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "Description"
+msgstr "الوصف"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__display_name
+#: model:ir.model.fields,field_description:project_management.field_project_task__display_name
+msgid "Display Name"
+msgstr "اسم العرض "
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_task__status__done
+msgid "Done"
+msgstr "منتهي"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_task__due_date
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "Due Date"
+msgstr "تاريخ الإستحقاق"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__end_date
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.project_mangement_view_tree
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_task__priority__high
+msgid "High"
+msgstr "مرتفع"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__id
+#: model:ir.model.fields,field_description:project_management.field_project_task__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_management__status__in_progress
+#: model:ir.model.fields.selection,name:project_management.selection__project_task__status__in_progress
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_search
+msgid "In Progress"
+msgstr "يتم العمل عليه"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__write_uid
+#: model:ir.model.fields,field_description:project_management.field_project_task__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__write_date
+#: model:ir.model.fields,field_description:project_management.field_project_task__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_task__priority__low
+msgid "Low"
+msgstr ""
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_task__priority__medium
+msgid "Medium"
+msgstr "متوسط"
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_management__status__on_hold
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_search
+msgid "On Hold"
+msgstr "معلق"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__overdue_tasks
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "Overdue Tasks"
+msgstr "مهمات متأخرة"
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_management__status__planning
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_search
+msgid "Planning"
+msgstr "يتم التخطيط له"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_task__priority
+msgid "Priority"
+msgstr "الأولوية"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_task__progress
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "Progress"
+msgstr "اداء العمل"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_task__project_id
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "Project"
+msgstr "مشروع"
+
+#. module: project_management
+#: model:res.groups,name:project_management.group_project_admin
+msgid "Project Admin"
+msgstr "مدير مشروع"
+
+#. module: project_management
+#: model:ir.actions.act_window,name:project_management.project_management_action
+#: model:ir.ui.menu,name:project_management.project_management_menu
+#: model:ir.ui.menu,name:project_management.project_management_root_menu
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_form
+msgid "Project Management"
+msgstr "إدارة المشروع"
+
+#. module: project_management
+#: model:ir.actions.report,name:project_management.project_management_report
+msgid "Project Management Report"
+msgstr "تقرير إدارة المشروع"
+
+#. module: project_management
+#: model:res.groups,name:project_management.group_project_manager
+msgid "Project Manager"
+msgstr "رئيس المشروع"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__name
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_search
+#: model_terms:ir.ui.view,arch_db:project_management.project_mangement_view_tree
+msgid "Project Name"
+msgstr "إسم المشروع"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "Project Performance Report"
+msgstr "تقرير أداء المشروع"
+
+#. module: project_management
+#: model:ir.actions.act_window,name:project_management.task_management_action
+msgid "Project Tasks"
+msgstr "مهمات المشروع"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__start_date
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.project_mangement_view_tree
+msgid "Start Date"
+msgstr "تاريخ البدأ"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__status
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+#: model_terms:ir.ui.view,arch_db:project_management.project_mangement_view_tree
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "Status"
+msgstr "الحالة"
+
+#. module: project_management
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "Task Breakdown"
+msgstr "تقسيم المهمه"
+
+#. module: project_management
+#: model:ir.ui.menu,name:project_management.task_management_menu
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_form
+msgid "Task Management"
+msgstr "ادارة المهمه"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_task__name
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_form
+#: model_terms:ir.ui.view,arch_db:project_management.task_management_view_tree
+msgid "Task Name"
+msgstr "العنوان"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_task__status
+msgid "Task Status"
+msgstr "حالة المهمه"
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__task_ids
+msgid "Tasks"
+msgstr "المهمات"
+
+#. module: project_management
+#: model:res.groups,name:project_management.group_team_member
+msgid "Team Member"
+msgstr "عضو فريق"
+
+#. module: project_management
+#: model:ir.model.fields.selection,name:project_management.selection__project_task__status__to_do
+msgid "To Do"
+msgstr ""
+
+#. module: project_management
+#: model:ir.model.fields,field_description:project_management.field_project_management__total_tasks
+#: model_terms:ir.ui.view,arch_db:project_management.project_management_report_tamplate
+msgid "Total Tasks"
+msgstr "جميع المهمات"
+
+#. module: project_management
+#: model:ir.model,name:project_management.model_project_management
+msgid "project.management"
+msgstr ""
+
+#. module: project_management
+#: model:ir.model,name:project_management.model_project_task
+msgid "project.task"
+msgstr "المهمة"

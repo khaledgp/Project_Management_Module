@@ -3,7 +3,7 @@
     'author':'Khaled GP',
     'version': '1.0',
     'category': '',
-    'depends': ['base','hr'],
+    'depends': ['base','hr','mail'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',

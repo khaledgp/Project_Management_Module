@@ -104,6 +104,12 @@
                         <field name="date_start" string="Start Date" required="1" />
                     </group>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+
+                </div>
             </form>
         </field>
     </record>
@@ -121,9 +127,11 @@
                 <field name="progress" string="Progress" widget="percentbar" options="{'color': 'green'}"/>
                 <field name="due_date" string="Due Date" />
                 <field name="date_start" string="Start Date" />
+                <field name="activity_ids" widget="mail_activity" options="{'activity_types': 'all'}"/>
             </tree>
         </field>
     </record>
+
 
     <record id="task_management_action" model="ir.actions.act_window">
         <field name="name">Project Tasks</field>

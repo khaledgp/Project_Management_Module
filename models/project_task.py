@@ -1,7 +1,6 @@
 from odoo import models, fields, api
 
 
-
 class ProjectTask(models.Model):
     _name = 'project.task'
     _inherit = ['mail.thread', 'mail.activity.mixin']
@@ -33,59 +32,53 @@ class ProjectTask(models.Model):
     def create(self, vals):
         task = super(ProjectTask, self).create(vals)
 
-        assigned_user = task.assigned_to.user_id if task.assigned_to and task.assigned_to.user_id else self.env.user
+        assigned_employee = task.assigned_to
+        assigned_user = assigned_employee.user_id or self.env.user
 
-        task_model_id = self.env['ir.model'].search([('model', '=', 'project.task')], limit=1).id
-
-        # check if the activity already exists
-        activity = self.env['mail.activity'].search([('res_id', '=', task.id), ('activity_type_id', '=', 4)])
-
-        # if the activity exists, update it
-        if activity:
-            activity.write({
-                'display_name': task.name,
-                'summary': 'test',
-                'date_deadline': task.due_date,
-                'user_id': assigned_user.user_id.id if assigned_user.user_id else self.env.user.id,
-            })
-        # if the activity does not exist, create it
-        else:
-            self.env['mail.activity'].create({
-                'display_name': task.name,
-                'summary': 'test',
-                'date_deadline': task.due_date,
-                'user_id': assigned_user.user_id.id if assigned_user.user_id else self.env.user.id,
-                'res_id': task.id,
-                'res_model_id': task_model_id,
-                'activity_type_id': 4
-            })
-
-        #     if task.date_start and task.date_start > date.today():
-        #     self.env['mail.activity'].create({
-        #         'res_model': 'project.task',
-        #         'res_model_id': task_model_id,
-        #         'res_id': task.id,
-        #         'activity_type_id': self.env.ref('mail.mail_activity_data_todo').id,
-        #         'user_id': assigned_user.user_id.id if assigned_user.user_id else self.env.user.id,
-        #         'note': 'Task is starting soon, follow up!'
-        #     })
-        #
-        # if task.due_date and task.due_date < date.today():
-        #     self.env['mail.activity'].create({
-        #         'res_model': 'project.task',
-        #         'res_model_id': task_model_id,
-        #         'res_id': task.id,
-        #         'activity_type_id': self.env.ref('mail.mail_activity_data_todo').id,
-        #         'user_id': assigned_user.user_id.id if assigned_user.user_id else self.env.user.id,
-        #         'note': 'Task is overdue, review required!'
-        #     })
-
-            task.activity_ids = task.activity_ids
+        self._create_or_update_activity(task, assigned_user)
 
         return task
 
-    @api.onchange('status')
-    def _onchange_task_status(self):
-        if self.status == 'done':
-            for activity in self.activity_ids:
-                activity.write({'state': 'done'})
+    def write(self, vals):
+        for task in self:
+            if 'assigned_to' in vals or 'due_date' in vals:
+                if 'assigned_to' in vals:
+                    assigned_employee = vals.get('assigned_to')
+                    if assigned_employee:
+                        assigned_employee = self.env['hr.employee'].browse(assigned_employee)
+
+                    assigned_user = assigned_employee.user_id or self.env.user
+
+                else:
+                    assigned_user = task.assigned_to.user_id or self.env.user
+
+                due_date = vals.get('due_date')
+
+                self._create_or_update_activity(task, assigned_user, due_date)
+
+        return super(ProjectTask, self).write(vals)
+
+    def _create_or_update_activity(self, task, assigned_user, due_date=None):
+        task_model_id = self.env['ir.model'].search([('model', '=', 'project.task')], limit=1).id
+
+        if not due_date:
+            due_date = task.due_date
+
+        activity = task.activity_ids.filtered(lambda a: a.activity_type_id.id ==  self.env.ref('mail.mail_activity_data_todo').id)
+
+        values = {
+            'display_name': task.name,
+            'summary': task.description,
+            'date_deadline': due_date,
+            'user_id': assigned_user.id if assigned_user.id else self.env.user,
+            'res_id': task.id,
+            'res_model_id': task_model_id,
+            'activity_type_id':  self.env.ref('mail.mail_activity_data_todo').id,
+        }
+
+        if activity:
+            activity.write(values)
+        else:
+            self.env['mail.activity'].create(values)
+
+

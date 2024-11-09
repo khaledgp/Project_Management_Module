@@ -1,0 +1,12 @@
+<odoo>
+    <record id="view_calendar_event_form_inherit" model="ir.ui.view">
+        <field name="name">calendar.event.inherit</field>
+        <field name="model">calendar.event</field>
+        <field name="inherit_id" ref="calendar.view_calendar_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="audience_ids" widget="many2many_tags" placeholder="Select Attendees"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

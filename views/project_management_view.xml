@@ -9,7 +9,7 @@
             <field name="description" string="Description"/>
             <field name="start_date" string="Start Date"/>
             <field name="end_date" string="End Date"/>
-            <field name="assigned_team" string="Assigned Team"/>
+            <field name="assigned_team" string="Assigned Team" widget="many2many_tags"/>
             <field name="status" string="Status"/>
           </tree>
        </field>
@@ -31,7 +31,7 @@
                         <field name="description" string="Description"/>
                         <field name="start_date" string="Start Date"/>
                         <field name="end_date" string="End Date"/>
-                        <field name="assigned_team" string="Assigned Team"/>
+                        <field name="assigned_team" string="Assigned Team" widget="many2many_tags"/>
                     </group>
 
                 </sheet>
